@@ -7,7 +7,7 @@ import { MdDelete } from "react-icons/md";
 import { useUserData } from "../context/UserContext";
 import { useSongData } from "../context/SongContext";
 
-const server = "http://15.134.216.90:5007";
+const server = "http://15.135.219.153:5007";
 
 const Admin = () => {
   const navigate = useNavigate();
@@ -79,7 +79,7 @@ const Admin = () => {
       setBtnLoading(true);
 
       const { data } = await axios.post(
-        `${server}/api/v1/album/new`,
+        `${server}/api/v1/admin/album/new`,
         formData,
         {
           headers: {
@@ -122,7 +122,7 @@ const Admin = () => {
       setBtnLoading(true);
 
       const { data } = await axios.post(
-        `${server}/api/v1/song/new`,
+        `${server}/api/v1/admin/song/new`,
         formData,
         {
           headers: {
@@ -163,7 +163,7 @@ const Admin = () => {
       setBtnLoading(true);
 
       const { data } = await axios.post(
-        `${server}/api/v1/song/${songId}`,
+        `${server}/api/v1/admin/song/${songId}`,
         formData,
         {
           headers: {
@@ -201,7 +201,7 @@ const Admin = () => {
       setBtnLoading(true);
 
       const { data } = await axios.delete(
-        `${server}/api/v1/album/${id}`,
+        `${server}/api/v1/admin/album/${id}`,
         {
           headers: {
             token: localStorage.getItem("token"),
@@ -233,7 +233,7 @@ const Admin = () => {
       setBtnLoading(true);
 
       const { data } = await axios.delete(
-        `${server}/api/v1/song/${id}`,
+        `${server}/api/v1/admin/song/${id}`,
         {
           headers: {
             token: localStorage.getItem("token"),
